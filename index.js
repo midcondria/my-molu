@@ -1,12 +1,13 @@
-const url = "https://api-blue-archive.vercel.app/api/characters?page=2";
-
 const targetArea = document.querySelector('.targetArea');
 const imageArea = document.querySelector('.imageArea');
 const btn = document.querySelector('.magicBtn');
+const input = document.querySelector('#input')
 
 let bindedData = {};
 
 getData = function () {
+    const url = `https://api-blue-archive.vercel.app/api/characters?page=${input.value}`;
+
     fetch(url, {
         mode: 'cors'})
         .then((response) => response.json())
